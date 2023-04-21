@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>phome</title>
+</head>
+<body>
+    <div id="switch">
+        <button onclick="window.location.href=`./login.html`">Login</button>
+        <button onclick="window.location.href=`./register.html`">Register</button>
+    </div>
+    <script>
+        window.onload=function(){
+            // alert("working")
+            var user=JSON.parse(localStorage.getItem("loginuser"))
+            // console.log(user)
+           if(!!user){
+            var divforhtml=document.getElementById("switch");
+            var name=`<h1>${user.uname}</h1>`;
+            // console.log(name)
+            divforhtml.innerHTML=name;
+           }
+           else{
+            alert("current user absent")
+           }
+
+        }
+    </script>
+</body>
+</html>
